@@ -17,10 +17,10 @@ const Home = () => {
   }
   return (
     <div className={styles.cardWrapper}> 
-      <Card title="Welcome to CoderHouse !!!" logo="logo.png">
+      <Card title="Welcome to Tech-Hut !!!" logo="logo.png">
 
       <p className={styles.text}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, dolore doloribus debitis assumenda repellat autem laborum qui asperiores delectus sint. Commodi architecto fugit eligendi voluptate veritatis nihil maiores voluptatem vitae.
+        We bring you an online realtime voice meet platform. We’re working hard to get Tech-hut ready for everyone for a seamless and interactive interface . Thank you for using our application. You can proceed further by Signing In.
       </p>
 
       <Button text="Let's Go" onclick={startRegister}></Button>

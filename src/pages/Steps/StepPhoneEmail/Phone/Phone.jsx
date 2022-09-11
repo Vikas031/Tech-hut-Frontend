@@ -12,24 +12,25 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Phone = ({onClick}) => {
     const [phoneNumber,setphone]=useState('');
-  //   const notify = () => {
-  //     toast.success('Success Notification !', {
-  //         position: toast.POSITION.TOP_RIGHT
-  //     });
-  // };
+     const notify = () => {
+       toast.error('Please enter a 10 digit phone number !', {
+           position: toast.POSITION.TOP_RIGHT
+       });
+   };
 
 
     const dispatch=useDispatch();
 
     async function submit(){
-      if(!phoneNumber)
-      { 
+      if(phoneNumber.length!=10)
+      {
+        notify(); 
         return;
       }
       
       //server request
       const res=await sendOtp({phone:phoneNumber});
-      console.log(res.data);
+      window.alert(`This is a testng Phase for the Application : Your OTP is :${res.data.otp}`)
       dispatch(setOtp({phone:res.data.phone,hash:res.data.hash}))
 
       onClick();
